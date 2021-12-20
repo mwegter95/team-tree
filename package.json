@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "inquire": "^0.4.8",
+    "inquirer": "^8.2.0",
+    "jest": "^27.4.5"
+  },
+  "scripts": {
+    "test": "jest"
+  }
+}
