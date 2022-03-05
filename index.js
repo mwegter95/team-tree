@@ -61,7 +61,24 @@ const promptUser = () => {
     ])
 };
 
+const promptTeam = teamData => {
+    if (!teamData.members) {
+        teamData.members = [];
+    }
+    return inquirer
+    .prompt([
+        {
+            type: 'list',
+            name: 'employeeType',
+            message: 'Would you like to add an employee?',
+            choices: ['Add an engineer', 'Add an intern', "No, I'm finished"]
+            
+        }
+
+    ])
+}
+
 promptUser().then(answers => {
     const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
     console.log(manager);
-})
+}).then(promptTeam);
